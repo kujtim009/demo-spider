@@ -1,8 +1,10 @@
 import scrapy
 from scrapy_demo.items import QuoteItem
 
+
 class DemoSpider(scrapy.Spider):
     name = 'demo_spider'
+    sops_job_name = "LOCAL RUN"
     allowed_domains = ['quotes.toscrape.com']
 
     def start_requests(self):
@@ -27,4 +29,5 @@ class DemoSpider(scrapy.Spider):
             quote_item['text'] = quote.css('span.text::text').get()
             quote_item['author'] = quote.css('small.author::text').get()
             quote_item['tags'] = quote.css('div.tags a.tag::text').getall()
+            quote_item["test"] = "TEST FIELD"
             yield quote_item

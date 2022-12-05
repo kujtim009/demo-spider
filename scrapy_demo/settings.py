@@ -18,3 +18,16 @@ DOWNLOADER_MIDDLEWARES = {
     'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
     'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
 }
+
+FEEDS = {
+    'ftp://scraper@firmagraphix-ks.com:ai9Pe!pC}YtL@ftp.firmagraphix-ks.com/Data/%(name)s/%(name)s_%(time)s.csv': {
+        'format': 'csv',
+    }
+}
+
+# ITEM_PIPELINES = {
+#     'scrapy.pipelines.files.FilesPipeline': 1,
+# }
+
+# FILES_STORE = 'gs://buildertrend_development/'
+# GCS_PROJECT_ID = 'buildertrend'
